@@ -1,0 +1,39 @@
+[project]
+name = "mnctools"
+dynamic = ["version"]
+authors = [
+  {name = "Marshall Ward", email="mnctools@marshallward.org"}
+]
+maintainers = [
+    { name = "ACCESS-NRI", email = "access.nri@anu.edu.au" }
+]
+description = "MNC support module for MITgcm"
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["MITgcm"]
+requires-python = ">=3.10"
+dependencies = [
+    "netcdf4",
+    "numpy",
+]
+
+[project.urls]
+Repository = "https://github.com/ACCESS-NRI/mnctools"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=80", 
+    "setuptools-scm[simple]>=8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme = "node-and-date"
+
+[tool.wheel]
+universal = true
