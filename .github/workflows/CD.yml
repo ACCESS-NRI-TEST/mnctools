@@ -27,10 +27,12 @@ jobs:
   
   publish-python-package:
     name: Publish Python Package
-    uses: access-nri/actions/.github/workflows/publish-python-package.yml@main
+    uses: access-nri/actions/.github/workflows/publish-python-package.yml@davide/add_secrets
     with:
       pypi-package: false
-    secrets: inherit
+    secrets:
+      ANACONDA_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
+      ANACONDA_USERNAME: ${{ secrets.ANACONDA_USERNAME }}
     permissions:
       actions: write
 
